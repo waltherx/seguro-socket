@@ -14,10 +14,6 @@ server.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-  return <h1>socket server</h1>
-});
-
-app.get("/home", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
