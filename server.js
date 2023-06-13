@@ -13,10 +13,6 @@ app.get("/home", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
-app.get("/favicon.ico", (req, res) => {
-  res.status(204).end();
-});
-
 server.listen(3000, () => {
   console.log("server corriendo *:3000");
 });

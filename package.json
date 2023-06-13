@@ -2,7 +2,7 @@
   "name": "seguro-socket",
   "version": "1.0.0",
   "description": "server socket",
-  "main": "index.js",
+  "main": "server.js",
   "author": "mddx",
   "license": "MIT",
   "dependencies": {
