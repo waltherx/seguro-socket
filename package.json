@@ -1,0 +1,12 @@
+{
+  "name": "seguro-socket",
+  "version": "1.0.0",
+  "description": "server socket",
+  "main": "index.js",
+  "author": "mddx",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.2"
+  }
+}
