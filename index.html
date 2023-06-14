@@ -90,7 +90,6 @@
 
       socket.on("ubicacion", (data) => {
         var item = document.createElement("li");
-        //console.log(data);
         item.textContent = JSON.stringify(data);
         messages.appendChild(item);
         window.scrollTo(0, document.body.scrollHeight);
