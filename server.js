@@ -1,13 +1,15 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
+app.use(cors());
 const http = require("http");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 const port = process.env.PORT || 3000;
-const cors = require("cors");
 
-app.use(cors());
+
+
 
 server.listen(port, () => {
   console.log(`server corriendo *:${port}`);
@@ -18,7 +20,6 @@ app.get("/", (req, res) => {
 });
 
 io.on("connection", (socket) => {
-
   socket.on("ubicacion", (data) => {    
     console.log(socket.id, JSON.stringify(data));
     io.emit("ubicacion", data);
