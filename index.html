@@ -77,10 +77,10 @@
       form.addEventListener("submit", (e) => {
         e.preventDefault();
         const datos = {
-          longitud: -5656.545,
-          latitud: -4545.4654,
+          longitud: -63.1750762,
+          latitud: -17.868332,
           dispositivo_id: input.value,
-          persona_ci: 455,
+          persona_ci: 24,
         };
         if (input.value) {
           socket.emit("ubicacion", datos);
