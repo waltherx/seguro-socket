@@ -63,7 +63,7 @@
   <body>
     <ul id="messages"></ul>
     <form id="form" action="">
-      <input id="input" autocomplete="off" /><button>Server demo</button>
+      <!--<input id="input" autocomplete="off" />--><button>Enviar Ubicacion</button>
     </form>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.min.js"></script>-->
     <script src="/socket.io/socket.io.js"></script>
@@ -72,7 +72,7 @@
 
       let messages = document.getElementById("messages");
       let form = document.getElementById("form");
-      let input = document.getElementById("input");
+      //let input = document.getElementById("input");
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -83,13 +83,10 @@
             const datos = {
               longitud: lng,
               latitud: lat,
-              dispositivo_id: input.value,
+              dispositivo_id: 1,
               persona_ci: 24,
             };
-            if (input.value) {
-              socket.emit("ubicacion", datos);
-              input.value = "";
-            }
+            socket.emit("ubicacion", datos);
           });
         } else {
           console.log(
