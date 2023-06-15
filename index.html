@@ -76,15 +76,25 @@
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
-        const datos = {
-          longitud: -63.1750762,
-          latitud: -17.868332,
-          dispositivo_id: input.value,
-          persona_ci: 24,
-        };
-        if (input.value) {
-          socket.emit("ubicacion", datos);
-          input.value = "";
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition((position) => {
+            let lat = position.coords.latitude;
+            let lng = position.coords.longitude;
+            const datos = {
+              longitud: lng,
+              latitud: lat,
+              dispositivo_id: input.value,
+              persona_ci: 24,
+            };
+            if (input.value) {
+              socket.emit("ubicacion", datos);
+              input.value = "";
+            }
+          });
+        } else {
+          console.log(
+            "La geolocalización no está disponible en este navegador."
+          );
         }
       });
 
