@@ -2,12 +2,26 @@
   "name": "seguro-socket",
   "version": "1.0.0",
   "description": "server socket",
-  "main": "server.js",
+  "main": "index.ts",
+  
   "author": "mddx",
   "license": "MIT",
+  "scripts": {
+    "dev": "npx ts-node src/index.ts",
+    "clear": "npx tsc --clear",
+    "build": "npx tsc",
+    "start": "node dist/index.js"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "socket.io": "^4.6.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.15",
+    "@types/express": "^4.17.20",
+    "@types/node": "^20.8.9",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
   }
 }

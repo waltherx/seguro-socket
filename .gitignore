@@ -1,1 +1,10 @@
 node_modules
+
+/dist
+
+/.vscode
+/.idea
+
+pnpm-lock.yaml
+.DS_Store
+.env
