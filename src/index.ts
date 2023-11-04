@@ -21,7 +21,7 @@ server.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/test-client/index.html");
+  res.sendFile(__dirname + "/client/index.html");
 });
 
 io.on("connection", (socket) => {
